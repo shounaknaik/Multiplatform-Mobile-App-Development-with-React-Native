@@ -81,7 +81,7 @@ const ContactNavigator=createStackNavigator({
         headerTitleStyle: {
             color: '#fff'
         },
-        headerLeft: <Icon name="menu" sixe={24}
+        headerLeft: <Icon name="menu" size={24}
             color="white"
             onPress={()=>navigation.toggleDrawer()}/>
     }
@@ -101,7 +101,7 @@ const ReservationNavigator=createStackNavigator({
         headerTitleStyle: {
             color: '#fff'
         },
-        headerLeft: <Icon name="menu" sixe={24}
+        headerLeft: <Icon name="menu" size={24}
             color="white"
             onPress={()=>navigation.toggleDrawer()}/>
     }

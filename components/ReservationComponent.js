@@ -119,7 +119,7 @@ class Reservation extends Component {
         );
     }
 
-};
+}
 
 const styles = StyleSheet.create({
     formRow: {
