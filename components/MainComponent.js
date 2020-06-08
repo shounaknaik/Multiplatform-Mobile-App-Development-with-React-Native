@@ -27,7 +27,7 @@ const mapDispatchToProps=dispatch=>({
 const MenuNavigator=createStackNavigator({
     Menu:{screen:Menu,
         navigationOptions:({navigation})=>({
-            headerLeft: <Icon name="menu" sixe={24}
+            headerLeft: <Icon name="menu" size={24}
             color="white"
             onPress={()=>navigation.toggleDrawer()}/>
         })},
@@ -42,7 +42,7 @@ const MenuNavigator=createStackNavigator({
         headerTitleStyle: {
             color: '#fff'
         },
-        headerLeft: <Icon name="menu" sixe={24}
+        headerLeft: <Icon name="menu" size={24}
             color="white"
             onPress={()=>navigation.toggleDrawer()}/>
     }
@@ -61,7 +61,7 @@ const HomeNavigator=createStackNavigator({
         headerTitleStyle: {
             color: '#fff'
         },
-        headerLeft: <Icon name="menu" sixe={24}
+        headerLeft: <Icon name="menu" size={24}
             color="white"
             onPress={()=>navigation.toggleDrawer()}/>
     }
@@ -98,7 +98,7 @@ const AboutNavigator=createStackNavigator({
         headerTitleStyle: {
             color: '#fff'
         },
-        headerLeft: <Icon name="menu" sixe={24}
+        headerLeft: <Icon name="menu" size={24}
             color="white"
             onPress={()=>navigation.toggleDrawer()}/>
     }
@@ -201,7 +201,7 @@ class Main extends Component {
   render() {
  
     return (
-        <View style ={{flex:1, paddingTop:Platform.OS==='ios'?0 :Expo.Constants.statusBarHeight}}>
+        <View style ={{flex:1}}>
            <MainNavigator/>
         </View>
     );
