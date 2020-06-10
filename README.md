@@ -17,3 +17,9 @@ This will serve up a tunnel on the same port I.e 3001 in my case!
 5) finally start your Expo cli and scanthe QR with your android or iOS. Everything will work fine.
 
 This solution was given by Mr Abdul Aziz Khan. 
+
+For using Secure store:
+
+1) Run this: expo install expo-secure-store
+2) import it in your file like this :import * as SecureStore from 'expo-secure-store';
+
