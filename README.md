@@ -23,3 +23,5 @@ For using Secure store:
 1) Run this: expo install expo-secure-store
 2) import it in your file like this :import * as SecureStore from 'expo-secure-store';
 
+see documentation of expo for classes like Permissions and other native capabilities.They are similar to the Secure Store implementation.
+
