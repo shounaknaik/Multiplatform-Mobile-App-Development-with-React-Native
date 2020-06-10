@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { View, Text,ScrollView,FlatList,StyleSheet,Modal,Button,Alert,PanResponder} from 'react-native';
+import { View, Text,ScrollView,FlatList,StyleSheet,Modal,Button,Alert,PanResponder,Share} from 'react-native';
 import { Card ,Icon,Input,Rating} from 'react-native-elements';
 import {connect} from 'react-redux';
 import {baseUrl} from '../shared/baseUrl';
@@ -21,9 +21,10 @@ const mapDispatchToProps=dispatch=>({
 
 
 function RenderDish(props){
+
     const dish=props.dish;
 
-    handleViewRef=ref=> this.view=ref;
+    handleViewRef=ref => this.view=ref;
 
     const recognizeDrag = ({ moveX, moveY, dx, dy }) => {
         if ( dx < -200 )
@@ -67,7 +68,19 @@ function RenderDish(props){
 
             return true;
         }
-    })
+    });
+
+    const shareDish = (title, message, url) => {
+        Share.share({
+            title: title,
+            message: title + ': ' + message + ' ' + url,
+            url: url
+        },{
+            dialogTitle: 'Share ' + title
+        })
+    }
+
+   
 
     if (dish!=null)
     {
@@ -80,7 +93,7 @@ function RenderDish(props){
                 <Text style={{margin:10}}>
                     {dish.description}
                 </Text>
-                <View style={{ flexDirection:"row" ,justifyContent:'center'}}>
+                <View style={{ flexDirection:"row" ,justifyContent:'center'}} >
                     <Icon
                         raised
                         reverse
@@ -97,9 +110,19 @@ function RenderDish(props){
                         color='#512DA8'
                         onPress={()=>props.onSelect()}
                         />
-                    </View>
+                     <Icon
+                            raised
+                            reverse
+                            name='share'
+                            type='font-awesome'
+                            color='#51D2A8'
+                            style={styles.cardItem}
+                            onPress={() => shareDish(dish.name, dish.description, baseUrl + dish.image)} />
+                    
+                    
+                </View>
               
-            </Card>
+                </Card>
             </Animatble.View>
         );
     }
