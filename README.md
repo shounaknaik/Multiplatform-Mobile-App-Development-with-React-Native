@@ -14,7 +14,7 @@ This will serve up a tunnel on the same port I.e 3001 in my case!
 
 4) go to base URL and edit the URL by the link given by the ngrok. Note: you have to change the base URL link every time you reload ngrok. Don't forget to put / in the last of URL.
 
-5) finally start your Expo cli and scanthe QR with your android or iOS. Everything will work fine.
+5) finally start your Expo cli and scan the QR with your android or iOS. Everything will work fine.
 
 This solution was given by Mr Abdul Aziz Khan. 
 
