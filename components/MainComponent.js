@@ -5,6 +5,7 @@ import Contact from './ContactComponent';
 import About from './AboutComponent';
 import DishDetail from './DishDetailComponent';
 import Reservation from './ReservationComponent';
+import Login from './LoginComponent';
 import Favorite from './FavoriteComponent';
 import {View,Platform,Image, StyleSheet,ScrollView,Text} from 'react-native';
 import {createStackNavigator,createDrawerNavigator,DrawerItems,SafeAreaView} from 'react-navigation';
@@ -35,7 +36,7 @@ const MenuNavigator=createStackNavigator({
         })},
     DishDetail:{screen:DishDetail}
 },{
-    intitialRouteName: 'Menu',
+    initialRouteName: 'Menu',
     navigationOptions:({navigation})=>({
         headerStyle:{
             backgroundColor:'#512DA8'
@@ -146,6 +147,25 @@ const AboutNavigator=createStackNavigator({
     }
 )});
 
+const LoginNavigator=createStackNavigator({
+    Login:{screen:Login},
+    
+},{
+    
+    navigationOptions:({navigation})=>({
+        headerStyle:{
+            backgroundColor:'#512DA8'
+        },
+        headerTintColor:'#fff',
+        headerTitleStyle: {
+            color: '#fff'
+        },
+        headerLeft: <Icon name="menu" size={24}
+            color="white"
+            onPress={()=>navigation.toggleDrawer()}/>
+    }
+)});
+
 const CustomDrawerContentComponent =(props)=>(
     <ScrollView>
         <SafeAreaView style={styles.conatiner}
@@ -166,6 +186,21 @@ const CustomDrawerContentComponent =(props)=>(
 );
 
 const MainNavigator=createDrawerNavigator({
+    Login:{
+        screen:LoginNavigator,
+        navigationOptions:{
+            title:'Login',
+            drawerLabel:'Login',
+            drawerIcon:({tintColor})=>(
+                <Icon 
+                    name='sign-in'
+                    type="font-awesome"
+                    size={24}
+                    color={tintColor}
+                    />
+            )
+        }
+    },
     Home:{
         screen:HomeNavigator,
         navigationOptions:{
@@ -257,6 +292,7 @@ const MainNavigator=createDrawerNavigator({
         }
     }
 },{
+    initialRouteName: 'Home',
     drawerBackGroundColor:'#D1C4E9',
     contentComponent:CustomDrawerContentComponent
 });
