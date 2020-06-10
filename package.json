@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "^5.9.2",
     "expo": "~37.0.3",
     "expo-asset": "~8.1.5",
     "expo-image-manipulator": "~8.1.0",
@@ -22,6 +23,7 @@
     "react-native-animatable": "1.2.4",
     "react-native-datepicker": "1.7.2",
     "react-native-elements": "^2.0.2",
+    "react-native-netinfo": "^1.1.0",
     "react-native-swipeout": "2.3.3",
     "react-native-web": "~0.11.7",
     "react-navigation": "^2.0.1",
